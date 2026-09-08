@@ -121,9 +121,13 @@ struct NotchContentView: View {
 
     private var content: some View {
         HStack(spacing: 14) {
-            Rail(vm: vm, panel: panel, tabs: vm.leftRail)
+            if !vm.leftRail.isEmpty {
+                Rail(vm: vm, panel: panel, tabs: vm.leftRail)
+            }
             panes
-            Rail(vm: vm, panel: panel, tabs: vm.rightRail)
+            if !vm.rightRail.isEmpty {
+                Rail(vm: vm, panel: panel, tabs: vm.rightRail)
+            }
         }
         .padding(.horizontal, 14)
         // The body's height is measured from this same number, so the two

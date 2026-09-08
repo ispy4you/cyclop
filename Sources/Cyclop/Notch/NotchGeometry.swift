@@ -34,7 +34,7 @@ struct NotchGeometry {
     /// spread from one slider (#27). What differs between Macs lives in
     /// `railIconHeight` instead, which is the one thing in the body actually
     /// free to give.
-    let expandedSize = CGSize(width: 620, height: 208)
+    let expandedSize = CGSize(width: 620, height: 328)
 
     /// Body for the teleprompter, the one tab that asks for more.
     ///
@@ -73,7 +73,7 @@ struct NotchGeometry {
     /// more than it is given should visibly yield, not overflow by a
     /// fraction that clips it.
     var railIconHeight: CGFloat {
-        let icons = CGFloat(NotchViewModel.Tab.leftRail.count)
+        let icons = CGFloat(NotchViewModel.Tab.rail.count)
         let available = expandedSize.height - notchSize.height - Self.bodyBottomPadding
         let ceiling = (available - (icons - 1) * Self.railSpacing) / icons
         return min(24, ceiling).rounded(.down)

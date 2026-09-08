@@ -60,8 +60,10 @@ final class NotchViewModel: ObservableObject {
         /// rail: it is not something to hover past on the way to a track or a
         /// calendar, so it sits last, furthest from the tabs people actually
         /// rest on.
-        static let leftRail: [Tab] = [.media, .shelf, .clipboard, .snippets, .calendar, .translate]
-        static let rightRail: [Tab] = [.notes, .currency, .teleprompter, .settings]
+        static let rail: [Tab] = [.media, .shelf, .clipboard, .snippets, .calendar,
+                                  .translate, .notes, .currency, .teleprompter, .settings]
+        static let leftRail: [Tab] = rail
+        static let rightRail: [Tab] = []
     }
 
     /// What every screen's panel adds up to, kept by `NotchController`: this
